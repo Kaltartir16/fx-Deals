@@ -1,55 +1,80 @@
-FX Deals
-Description
-FX Deal  is a Spring Boot application designed for analyzing and processing foreign exchange (FX) deals. It offers functionalities for validating, storing, and analyzing FX deal information efficiently.
+# FX Deals
 
-Features
-Process and validate FX deals
-Store and retrieve deal information
-Analyze FX deal data
-Docker Support
+## Description
+FX Deals is a Spring Boot application designed for analyzing and processing foreign exchange (FX) deals. It offers functionalities for validating, storing, and analyzing FX deal information efficiently.
+
+## Features
+- Process and validate FX deals
+- Store and retrieve deal information
+- Analyze FX deal data
+
+## Docker Support
 This project includes a Dockerfile, allowing you to build a Docker image and run the application within a Docker container. This approach simplifies deployment and ensures consistent runtime environments.
 
-Building the Docker Image
+### Building the Docker Image
 To build the Docker image:
 
-Navigate to the project's root directory:
+1. Navigate to the project's root directory:
 
-cd path/to/fx-deals
-Run the Docker build command:
+    ```bash
+    cd path/to/fx-deals
+    ```
 
-docker build -t fx-deals .
-This builds a Docker image named fxdeals based on the Dockerfile.
+2. Run the Docker build command:
 
-Running the Application in a Docker Container
+    ```bash
+    docker build -t fx-deals .
+    ```
+
+   This builds a Docker image named fx-deals based on the Dockerfile.
+
+### Running the Application in a Docker Container
 To run the application in a Docker container:
 
-Start the Docker container:
+1. Start the Docker container:
 
-docker run -p 8080:8080 fxdeals
-This command runs the application inside the Docker container, mapping port 8080 of the container to port 8080 on your host machine.
+    ```bash
+    docker run -p 8080:8080 fx-deals
+    ```
 
-Access the application at http://localhost:8080.
+   This command runs the application inside the Docker container, mapping port 8080 of the container to port 8080 on your host machine.
 
-Getting Started
-Prerequisites
-Java JDK 17 or later
-Maven
-Spring Boot
-Docker (optional for Docker-based setup)
-Installing and Running Locally
-Clone the repository:
+2. Access the application at [http://localhost:8080](http://localhost:8080).
 
-git clone https://github.com/Kaltartir16/fx-deals
-Navigate to the project directory:
+## Getting Started
+### Prerequisites
+- Java JDK 17 or later
+- Maven
+- Spring Boot
+- Docker (optional for Docker-based setup)
 
-cd fx-deals
-Compile and package the application using Maven:
+### Installing and Running Locally
+1. Clone the repository:
 
-mvn clean package
-Run the application:
+    ```bash
+    git clone https://github.com/Kaltartir16/fx-deals
+    ```
 
-java -jar fx-deals-0.0.1-SNAPSHOT.jar
-Authors
-Khader AlTartir - Initial work - Kaltartir16
-Version History
-0.1 - Initial Release
+2. Navigate to the project directory:
+
+    ```bash
+    cd fx-deals
+    ```
+
+3. Compile and package the application using Maven:
+
+    ```bash
+    mvn clean package
+    ```
+
+4. Run the application:
+
+    ```bash
+    java -jar fx-deals-0.0.1-SNAPSHOT.jar
+    ```
+
+## Authors
+Khader AlTartir - Initial work - [Kaltartir16](https://github.com/Kaltartir16)
+
+## Version History
+- 0.1: Initial Release
