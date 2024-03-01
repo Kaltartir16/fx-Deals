@@ -1,11 +1,13 @@
 package com.progresssoft.fxdeals.domain.model;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
+@NotNull
 public class DealRequest {
 
     private String Id;

@@ -26,15 +26,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ExtendWith(MockitoExtension.class)
 class DealControllerTest {
 
-
-
     @Mock
     private DealServiceImpl dealService;
-
     private DealController dealController;
-
     private MockMvc mockMvc;
-
 
     @BeforeEach
     void setUp() {
@@ -47,9 +42,7 @@ class DealControllerTest {
     void createFXDeal_ShouldReturnSavedDeal_WhenValidRequest() throws Exception {
         Path fxDealsPath = ResourceUtils.getFile("classpath:fxDeal.json").toPath();
         String fxDealsJson = new String(Files.readAllBytes(fxDealsPath));
-
         Deal savedDeal = Deal.builder().build();
-
         when(dealService.importDeal(any(Deal.class))).thenReturn(savedDeal);
         mockMvc.perform(post("/api/fxdeals")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -64,10 +57,7 @@ class DealControllerTest {
     void createFXDeals_ShouldReturnSavedDeals_WhenValidRequest() throws Exception {
         Path fxDealsPath = ResourceUtils.getFile("classpath:fxDeals.json").toPath();
         String fxDealsJson = new String(Files.readAllBytes(fxDealsPath));
-
-
         when(dealService.importDeal(any(Deal.class))).thenAnswer(i -> i.getArgument(0));
-
         mockMvc.perform(post("/api/fxdeals/batch")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(fxDealsJson))

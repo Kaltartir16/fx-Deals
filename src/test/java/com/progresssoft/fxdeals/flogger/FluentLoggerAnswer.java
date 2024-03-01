@@ -7,7 +7,6 @@ import org.mockito.stubbing.Answer;
 
 public class FluentLoggerAnswer implements Answer<Object> {
     private final FluentLogger.Api api = Mockito.mock(FluentLogger.Api.class);
-
     @Override
     public Object answer(InvocationOnMock invocation) {
         return api;

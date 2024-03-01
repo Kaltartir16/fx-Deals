@@ -15,10 +15,8 @@ public class DealRequestValidatorImplTest {
         DealRequest dealRequest = new DealRequest();
         dealRequest.setFromCurrencyIsoCode("USD");
         dealRequest.setToCurrencyIsoCode("EUR");
-
         // When
         boolean result = validator.validate(dealRequest);
-
         // Then
         assertTrue(result);
     }
@@ -29,7 +27,6 @@ public class DealRequestValidatorImplTest {
         DealRequestValidatorImpl validator = new DealRequestValidatorImpl();
         DealRequest dealRequest = new DealRequest();
         dealRequest.setFromCurrencyIsoCode("INVALID");
-
         // When and Then
         CurrencyNotFoundException exception = assertThrows(CurrencyNotFoundException.class, () -> validator.validate(dealRequest));
         assertEquals("Currency code INVALID Not Found", exception.getMessage());
@@ -42,8 +39,6 @@ public class DealRequestValidatorImplTest {
         DealRequest dealRequest = new DealRequest();
         dealRequest.setToCurrencyIsoCode("INVALID");
         dealRequest.setFromCurrencyIsoCode("INVALID");
-
-
         // When and Then
         CurrencyNotFoundException exception = assertThrows(CurrencyNotFoundException.class, () -> validator.validate(dealRequest));
         assertEquals("Currency code INVALID Not Found", exception.getMessage());
@@ -53,7 +48,6 @@ public class DealRequestValidatorImplTest {
     void validateCurrency_ShouldReturnTrue_WhenCurrencyIsValid() {
         // Given
         DealRequestValidatorImpl validator = new DealRequestValidatorImpl();
-
         // When
         boolean result = validator.validateCurrency("USD");
 
@@ -65,7 +59,6 @@ public class DealRequestValidatorImplTest {
     void validateCurrency_ShouldThrowCurrencyNotFoundException_WhenCurrencyIsInvalid() {
         // Given
         DealRequestValidatorImpl validator = new DealRequestValidatorImpl();
-
         // When and Then
         CurrencyNotFoundException exception = assertThrows(CurrencyNotFoundException.class, () -> validator.validateCurrency("INVALID"));
         assertEquals("Currency code INVALID Not Found", exception.getMessage());
@@ -75,7 +68,6 @@ public class DealRequestValidatorImplTest {
     void validateCurrency_ShouldThrowCurrencyNotFoundException_WhenCurrencyCodeIsNull() {
         // Given
         DealRequestValidatorImpl validator = new DealRequestValidatorImpl();
-
         // When and Then
         CurrencyNotFoundException exception = assertThrows(CurrencyNotFoundException.class, () -> validator.validateCurrency(null));
         assertEquals("Currency code null Not Found", exception.getMessage());
@@ -85,7 +77,6 @@ public class DealRequestValidatorImplTest {
     void validateCurrency_ShouldThrowCurrencyNotFoundException_WhenCurrencyCodeIsEmpty() {
         // Given
         DealRequestValidatorImpl validator = new DealRequestValidatorImpl();
-
         // When and Then
         CurrencyNotFoundException exception = assertThrows(CurrencyNotFoundException.class, () -> validator.validateCurrency(""));
         assertEquals("Currency code  Not Found", exception.getMessage());

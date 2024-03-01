@@ -9,10 +9,12 @@
 		<version>3.2.1</version>
 		<relativePath />
 	</parent>
-	<groupId>com.bloomberg</groupId>
+	<groupId>com.progresssoft</groupId>
 	<artifactId>fx-deals</artifactId>
-	<version>v1.0.0</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>FX Deals</name>
+	<description>A Spring Boot application for storing and analyzing foreign
+		exchange deals for Bloomberg.</description>
 
 	<properties>
 		<java.version>17</java.version>

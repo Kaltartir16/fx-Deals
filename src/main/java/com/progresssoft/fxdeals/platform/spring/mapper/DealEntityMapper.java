@@ -28,7 +28,7 @@ public class DealEntityMapper {
                 .build();
     }
 
-    public static DealEntity convertToDealEntity(DealRequest deal) {
+    public static DealEntity convertToEntity(DealRequest deal) {
 
         return DealEntity.builder()
                 .id(deal.getId())

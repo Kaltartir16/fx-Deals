@@ -11,7 +11,7 @@ EXPOSE 8080
 ARG JAR_FILE=target/fx-deals-0.0.1-SNAPSHOT.jar
 
 # Add the application's jar to the container
-COPY ${JAR_FILE} fxdeals.jar
+COPY ${JAR_FILE} fx-deals-0.0.1-SNAPSHOT.jar
 
 # Run the jar file
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/fxdeals.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/fx-deals-0.0.1-SNAPSHOT.jar"]
